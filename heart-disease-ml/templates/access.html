@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Heart Risk System</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+
+background:url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed;
+background-size:cover;
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:rgba(255,255,255,0.3);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:10px;
+width:350px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff4d6d;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Heart Disease Risk Prediction</h2>
+
+<form action="/save_user" method="post">
+
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<button type="submit">Enter System</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

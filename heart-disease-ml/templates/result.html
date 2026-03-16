@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Prediction Result</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+
+background:url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed;
+background-size:cover;
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:rgba(255,255,255,0.7);
+padding:40px;
+border-radius:10px;
+width:500px;
+text-align:center;
+}
+
+button{
+margin-top:20px;
+padding:12px 20px;
+background:#ff4d6d;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Heart Disease Risk Result</h1>
+
+<h2>{{ risk }}</h2>
+
+<h3>Probability: {{ probability }}%</h3>
+
+<h3>Possible Factors</h3>
+
+<ul>
+
+{% for issue in issues %}
+<li>{{ issue }}</li>
+{% endfor %}
+
+</ul>
+
+<a href="/predict_page">
+<button>Check Another Prediction</button>
+</a>
+
+</div>
+
+</body>
+</html>
